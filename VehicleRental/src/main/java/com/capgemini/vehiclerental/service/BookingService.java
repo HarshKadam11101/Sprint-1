@@ -18,6 +18,5 @@ public interface BookingService {
 
 	public Booking updateBooking(Booking booking);
 
-	public Float totalRent(Booking booking);
 
 }

@@ -22,10 +22,10 @@ public class Booking {
 	private int Booking_id;
 	
 	@Column (name="Pickup_time")
-	private String PickupTime;
+	private LocalDateTime PickupTime;
 	
 	@Column(name="Return_time")
-	private String ReturnTime;
+	private LocalDateTime ReturnTime;
 	
 	@Column(name="Availability")
 	private boolean Availablity;
@@ -49,7 +49,7 @@ public class Booking {
 	}
 
 
-	public Booking(String pickupTime, String returnTime, Vehicle vehicle, Customer customer, Location location, float fare, boolean Availablity) {
+	public Booking(LocalDateTime pickupTime, LocalDateTime returnTime, Vehicle vehicle, Customer customer, Location location, float fare, boolean Availablity) {
 	
 	//	this.Booking_id = booking_id;
 		this.PickupTime = pickupTime;
@@ -73,22 +73,22 @@ public class Booking {
 	}
 
 
-	public String getPickupTime() {
+	public LocalDateTime getPickupTime() {
 		return PickupTime;
 	}
 
 
-	public void setPickupTime( pickupTime) {
+	public void setPickupTime( LocalDateTime pickupTime) {
 		PickupTime = pickupTime;
 	}
 
 
-	public String getReturnTime() {
+	public LocalDateTime getReturnTime() {
 		return ReturnTime;
 	}
 
 
-	public void setReturnTime(String returnTime) {
+	public void setReturnTime(LocalDateTime returnTime) {
 		ReturnTime = returnTime;
 	}
 

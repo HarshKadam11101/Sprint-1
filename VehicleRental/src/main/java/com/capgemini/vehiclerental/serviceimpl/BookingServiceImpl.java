@@ -54,9 +54,6 @@ public class BookingServiceImpl implements BookingService{
 		return bookingrepo.getReferenceById(booking.getBooking_id());
 	}
 
-
-	}
-	
 	
 
 
