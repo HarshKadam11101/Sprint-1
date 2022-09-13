@@ -1,8 +1,5 @@
 package com.capgemini.vehiclerental.serviceimpl;
 
-import java.text.SimpleDateFormat;
-import java.time.ZoneOffset;
-import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
