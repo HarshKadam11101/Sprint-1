@@ -36,7 +36,7 @@ public class CustomerServiceImpl implements CustomerService{
 	}
 
 	@Override
-	public String deleteCustomerById(Integer id) {
+	public String deleteCustomerById(Integer id)  {
 		customerrepo.deleteById(id);
 		return "Customer deleted successfully";
 	}

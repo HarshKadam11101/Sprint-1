@@ -3,6 +3,7 @@ package com.capgemini.vehiclerental.controller;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,6 +17,7 @@ import com.capgemini.vehiclerental.entity.Customer;
 import com.capgemini.vehiclerental.exception.CustomerNotFoundException;
 import com.capgemini.vehiclerental.service.CustomerService;
 
+@CrossOrigin("*")
 @RestController
 @RequestMapping("/customer")
 public class CustomerController {
@@ -34,7 +36,7 @@ public class CustomerController {
 	}
 	
 	@DeleteMapping("/delete/{id}")
-	public String deleteCustomerById(@PathVariable("id") Integer id) {
+	public String deleteCustomerById(@PathVariable("id") Integer id)  {
 		return customerService.deleteCustomerById(id);
 	}
 

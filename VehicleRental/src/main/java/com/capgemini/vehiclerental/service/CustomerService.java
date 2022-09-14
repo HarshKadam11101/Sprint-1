@@ -13,7 +13,7 @@ public interface CustomerService {
 
 	public Customer fetchCustomerById(Integer id) throws CustomerNotFoundException;
 
-	public String deleteCustomerById(Integer id);
+	public String deleteCustomerById(Integer id) ;
 
 	public Customer updateCustomer(Customer customer);
 
