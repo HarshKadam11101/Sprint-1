@@ -1,5 +1,6 @@
 package com.capgemini.vehiclerental.serviceimpl;
 
+import java.util.List;
 import java.util.Optional;
 
 import javax.validation.Valid;
@@ -8,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;
 
+import com.capgemini.vehiclerental.entity.Credentials;
 import com.capgemini.vehiclerental.entity.Customer;
 import com.capgemini.vehiclerental.exception.CustomerNotFoundException;
 import com.capgemini.vehiclerental.repository.CustomerRepository;
@@ -45,6 +47,18 @@ public class CustomerServiceImpl implements CustomerService{
 	public Customer updateCustomer(Customer customer) {
 		customerrepo.saveAndFlush(customer);
 		return customerrepo.getReferenceById(customer.getId());
+	}
+	@Override
+	public boolean validateCustomer(Credentials credentials) {
+		List<Customer> customerList= customerrepo.findAll();
+		for(Customer customer:customerList) {
+			if(customer.getUsername().equals(credentials.getUserName())) {
+				if(customer.getPassword().equals(credentials.getPassword())) {
+					return true;
+				}
+			}
+		}
+		return false;
 	}
 
 }

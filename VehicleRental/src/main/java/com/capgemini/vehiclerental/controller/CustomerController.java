@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.capgemini.vehiclerental.entity.Credentials;
 import com.capgemini.vehiclerental.entity.Customer;
 import com.capgemini.vehiclerental.exception.CustomerNotFoundException;
 import com.capgemini.vehiclerental.service.CustomerService;
@@ -44,4 +45,8 @@ public class CustomerController {
     public Customer updateCustomer(@RequestBody Customer customer) {
         return customerService.updateCustomer(customer);
     }
+	@PostMapping("/validate")
+	public boolean validateCustomer(@RequestBody Credentials credentials) {
+		return customerService.validateCustomer(credentials);
+	}
 }
