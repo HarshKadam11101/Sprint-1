@@ -36,6 +36,7 @@ public class CustomerController {
 		return customerService.fetchCustomerById(id);
 	}
 	
+	
 	@DeleteMapping("/delete/{id}")
 	public String deleteCustomerById(@PathVariable("id") Integer id)  {
 		return customerService.deleteCustomerById(id);
@@ -46,7 +47,7 @@ public class CustomerController {
         return customerService.updateCustomer(customer);
     }
 	@PostMapping("/validate")
-	public boolean validateCustomer(@RequestBody Credentials credentials) {
+	public Integer validateCustomer(@RequestBody Credentials credentials) {
 		return customerService.validateCustomer(credentials);
 	}
 }

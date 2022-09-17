@@ -18,6 +18,8 @@ public interface CustomerService {
 
 	public Customer updateCustomer(Customer customer);
 	
-	public boolean validateCustomer(Credentials credentials);
+	public Integer validateCustomer(Credentials credentials);
+
+	
 
 }

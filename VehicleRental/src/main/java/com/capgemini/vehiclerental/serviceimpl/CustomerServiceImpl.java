@@ -49,16 +49,18 @@ public class CustomerServiceImpl implements CustomerService{
 		return customerrepo.getReferenceById(customer.getId());
 	}
 	@Override
-	public boolean validateCustomer(Credentials credentials) {
+	public Integer validateCustomer(Credentials credentials) {
 		List<Customer> customerList= customerrepo.findAll();
 		for(Customer customer:customerList) {
 			if(customer.getUsername().equals(credentials.getUserName())) {
 				if(customer.getPassword().equals(credentials.getPassword())) {
-					return true;
+					return customer.getId();
 				}
 			}
 		}
-		return false;
+		return null;
 	}
+
+	
 
 }
